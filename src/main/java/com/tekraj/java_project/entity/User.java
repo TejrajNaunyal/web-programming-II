@@ -32,11 +32,11 @@ public class User {
         this.id = id;
     }
 
-    public String getusername() {
+    public String getUsername() {  // Updated to camel-case
         return username;
     }
 
-    public void setusername(String username) {
+    public void setUsername(String username) {  // Updated to camel-case
         this.username = username;
     }
 

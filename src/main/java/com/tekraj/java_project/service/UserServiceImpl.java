@@ -22,7 +22,7 @@ public class UserServiceImpl {
     }
 
     public boolean checkAuthDetails(User user) {
-        User dbUser = userRepository.findByUsername(user.getusername());
+        User dbUser = userRepository.findByUsername(user.getUsername());
         if (dbUser == null) {
             return false;
         }

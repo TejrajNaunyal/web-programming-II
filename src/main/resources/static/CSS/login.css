@@ -53,7 +53,7 @@ label {
     font-size: 14px;
 }
 
-input[type="email"],
+input[type="text"], /* Correcting the input type for the username */
 input[type="password"] {
     width: 100%;
     padding: 12px;
@@ -64,11 +64,12 @@ input[type="password"] {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input[type="email"]:focus,
+input[type="text"]:focus, /* Apply focus effect */
 input[type="password"]:focus {
     border-color: #5cb85c;
     box-shadow: 0 0 10px rgba(92, 184, 92, 0.2);
 }
+
 
 .btn {
     width: 100%;

@@ -29,7 +29,7 @@ public class LoginController {
     // Handle login
     @PostMapping("/login")
     public String login(@ModelAttribute("user") User user, Model model) {
-        User existingUser = userRepository.findByUsername(user.getusername());
+        User existingUser = userRepository.findByUsername(user.getUsername()); // Updated method name
         if (existingUser != null && passwordEncoder.matches(user.getPassword(), existingUser.getPassword())) {
             return "redirect:/home"; // Login successful
         } else {
@@ -48,7 +48,7 @@ public class LoginController {
     // Handle new user registration
     @PostMapping("/register")
     public String registerUser(@ModelAttribute("user") User user, Model model) {
-        if (userRepository.findByUsername(user.getusername()) != null) {
+        if (userRepository.findByUsername(user.getUsername()) != null) { // Updated method name
             model.addAttribute("error", "Username already exists");
             return "register";
         }
