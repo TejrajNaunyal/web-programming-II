@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Details</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">  <!-- Optional: Add your CSS link -->
+</head>
+<body>
+    <h1>Student Details</h1>
+
+    <div>
+        <label><strong>Name:</strong></label>
+        <span th:text="${student.name}"></span>
+    </div>
+    
+    <div>
+        <label><strong>Email:</strong></label>
+        <span th:text="${student.email}"></span>
+    </div>
+
+    <!-- Optional: Add more fields here as needed -->
+
+    <a th:href="@{/students}">Back to Students List</a>  <!-- Assuming a list of students exists at /students -->
+</body>
+</html>

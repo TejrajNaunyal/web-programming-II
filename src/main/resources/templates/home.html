@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" th:href="@{/css/home.css}">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Learning Platform - Posts</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
-    <h1>Welcome to the Learning App</h1>
-    <p>This is the home page of the Learning App.</p>
-    <button>Click Me!</button>
+
+<h1>Learning Platform - Posts</h1>
+
+<!-- Section to display posts and replies -->
+<div th:each="post : ${posts}">
+    <h2 th:text="${post.title}"></h2>
+    <p th:text="${post.content}"></p>
     
+    <h3>Replies:</h3>
+    <ul th:each="reply : ${post.replies}">
+        <li th:text="${reply.content}"></li>
+    </ul>
+    
+    <!-- Reply form for each post -->
+    <form th:action="@{'/posts/' + ${post.id} + '/reply'}" method="POST">
+        <label for="replyContent">Your Reply:</label>
+        <textarea id="replyContent" name="content" required></textarea>
+        <button type="submit">Submit Reply</button>
+    </form>
+</div>
+
+<!-- Button to create a new post -->
+<a href="/posts/create">Create New Post</a>
+
 </body>
 </html>

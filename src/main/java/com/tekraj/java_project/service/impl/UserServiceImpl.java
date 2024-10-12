@@ -1,4 +1,4 @@
-package com.tekraj.java_project.service;
+package com.tekraj.java_project.service.impl;
 
 import com.tekraj.java_project.entity.User;
 import com.tekraj.java_project.repo.UserRepository;
