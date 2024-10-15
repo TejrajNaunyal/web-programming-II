@@ -1,53 +1,85 @@
-/* Style.css */
-
-/* Global styles */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 h1 {
     text-align: center;
-    color: #333;
-}
-
-form {
-    background-color: white;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-input[type="text"], textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: #28a745;
+    background-color: #4CAF50;
     color: white;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Container for the action buttons */
+.actions {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* Button Styles */
+button, .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+    text-decoration: none;
+    display: inline-block;
 }
 
-button:hover {
-    background-color: #218838;
+button:hover, .btn:hover {
+    background-color: #45a049;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+/* Dropdown menu styles */
+.dropdown {
+    display: inline-block;
+    position: relative;
 }
 
-li {
-    background-color: #f9f9f9;
-    padding: 10px;
-    margin-bottom: 10px;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu when hovered */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Logout button styles */
+.logout-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336;
+}
+
+.logout-btn:hover {
+    background-color: #e53935;
 }

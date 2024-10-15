@@ -1,33 +1,28 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <title>Learning Platform - Posts</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+    <h1>Welcome to Student Management System</h1>
 
-<h1>Learning Platform - Posts</h1>
+    <!-- Dropdown button for Add/List student actions -->
+    <div class="actions">
+        <div class="dropdown">
+            <button class="btn">Student Actions</button>
+            <div class="dropdown-content">
+                <a href="/students/add">Add Student</a>
+                <a href="/students">List Students</a>
+            </div>
+        </div>
+    </div>
 
-<!-- Section to display posts and replies -->
-<div th:each="post : ${posts}">
-    <h2 th:text="${post.title}"></h2>
-    <p th:text="${post.content}"></p>
-    
-    <h3>Replies:</h3>
-    <ul th:each="reply : ${post.replies}">
-        <li th:text="${reply.content}"></li>
-    </ul>
-    
-    <!-- Reply form for each post -->
-    <form th:action="@{'/posts/' + ${post.id} + '/reply'}" method="POST">
-        <label for="replyContent">Your Reply:</label>
-        <textarea id="replyContent" name="content" required></textarea>
-        <button type="submit">Submit Reply</button>
-    </form>
-</div>
+    <!-- Logout button -->
+    <a href="/logout" class="btn logout-btn">Logout</a>
 
-<!-- Button to create a new post -->
-<a href="/posts/create">Create New Post</a>
-
+    <script src="/static/script.js"></script>
 </body>
 </html>

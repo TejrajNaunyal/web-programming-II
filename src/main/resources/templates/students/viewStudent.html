@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Details</title>
-    <link rel="stylesheet" th:href="@{/css/styles.css}">  <!-- Optional: Add your CSS link -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Student</title>
+    <link rel="stylesheet" th:href="@{/css/student.css}">
 </head>
 <body>
     <h1>Student Details</h1>
 
     <div>
-        <label><strong>Name:</strong></label>
-        <span th:text="${student.name}"></span>
+        <h2>Student Details</h2>
+        <p>Name: <span th:text="${student.name}">Name Placeholder</span></p>
+        <p>Email: <span th:text="${student.email}">Email Placeholder</span></p>
+        <p>Age: <span th:text="${student.age}">Age Placeholder</span></p>
     </div>
     
-    <div>
-        <label><strong>Email:</strong></label>
-        <span th:text="${student.email}"></span>
-    </div>
 
-    <!-- Optional: Add more fields here as needed -->
-
-    <a th:href="@{/students}">Back to Students List</a>  <!-- Assuming a list of students exists at /students -->
+    <a href="/students" class="btn">Back to List</a>
 </body>
 </html>

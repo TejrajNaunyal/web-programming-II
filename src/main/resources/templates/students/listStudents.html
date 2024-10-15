@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html th:replace="~{/students/studentsLayout :: layout(~{::title}, ~{::main})}" xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en">
 <head>
-    <title>Student List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Students</title>
+    <link rel="stylesheet" th:href="@{/css/student.css}">
 </head>
 <body>
-<main class="container mt-5">
-    <h1 class="mb-4">Student Listings</h1>
-    <table class="table table-striped">
-        <thead>
+    <h1>All Students</h1>
+
+    <table>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Course</th>
+            <th>Age</th>
             <th>Actions</th>
         </tr>
-        </thead>
-        <tbody>
         <tr th:each="student : ${students}">
-            <td th:text="${student.name}"></td>
-            <td th:text="${student.email}"></td>
-            <td th:text="${student.course}"></td>
+            <td th:text="${student.id}">ID Placeholder</td>
+            <td th:text="${student.name}">Name Placeholder</td>
+            <td th:text="${student.email}">Email Placeholder</td>
+            <td th:text="${student.age}">Age Placeholder</td>
             <td>
-                <a class="btn btn-info btn-sm" th:href="@{/students/{id}(id=${student.id})}">View</a>
-                <a class="btn btn-warning btn-sm" th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a>
-                <a class="btn btn-danger btn-sm" th:href="@{/students/delete/{id}(id=${student.id})}" 
-                   onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
+                <a th:href="@{/students/{id}(id=${student.id})}">View</a>
+                <a th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a>
+                <a th:href="@{/students/delete/{id}(id=${student.id})}" onclick="return confirm('Are you sure?');">Delete</a>
             </td>
         </tr>
-        </tbody>
     </table>
-    <a class="btn btn-primary" href="/students/add-student">Add New Student</a>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+    <a href="/students/add" class="btn">Add Student</a>
 </body>
 </html>

@@ -22,7 +22,7 @@ public class StudentController {
     @GetMapping
     public String getAllStudents(Model model) {
         model.addAttribute("students", studentService.getAllStudents());
-        return "students/list";
+        return "students/listStudents";
     }
 
     @GetMapping("/{id}")
@@ -35,8 +35,9 @@ public class StudentController {
         }
         return "students/viewStudent";
     }
+    
 
-    @GetMapping("/add-student")
+    @GetMapping("/add")
     public String createStudentForm(Model model) {
         model.addAttribute("student", new Student());
         return "students/addStudent";
@@ -52,14 +53,14 @@ public class StudentController {
     public String editStudentForm(@PathVariable Long id, Model model) {
         Optional<Student> student = studentService.getStudentById(id);
         if (student.isPresent()) {
-            model.addAttribute("student", student.get()); 
+            model.addAttribute("student", student.get());
         } else {
-            model.addAttribute("student", null); 
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Student not found");
         }
-        return "students/editStudent";
+        return "students/editStudent"; // Make sure this matches your HTML file name
     }
 
-    @PostMapping("/{id}")
+    @PostMapping("/edit/{id}")
     public String updateStudent(@PathVariable Long id, @ModelAttribute Student student) {
         studentService.updateStudent(id, student);
         return "redirect:/students";
