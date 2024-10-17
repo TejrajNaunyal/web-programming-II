@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Learning Paths</title>
+</head>
+<body>
+    <h1>Learning Paths</h1>
+    <a th:href="@{/learning-paths/add}">Add New Learning Path</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="learningPath : ${learningPaths}">
+                <td th:text="${learningPath.title}"></td>
+                <td th:text="${learningPath.description}"></td>
+                <td>
+                    <a th:href="@{/learning-paths/{id}(id=${learningPath.id})}">View</a>
+                    <a th:href="@{/learning-paths/edit/{id}(id=${learningPath.id})}">Edit</a>
+                    <a th:href="@{/learning-paths/delete/{id}(id=${learningPath.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

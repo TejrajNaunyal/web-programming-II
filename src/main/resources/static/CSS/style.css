@@ -1,85 +1,63 @@
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-h1 {
-    text-align: center;
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    margin: 0;
-}
-
-/* Container for the action buttons */
 .actions {
-    text-align: center;
-    margin: 40px 0;
+    margin: 20px 0;
 }
 
-/* Button Styles */
-button, .btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 10px;
-    text-decoration: none;
-    display: inline-block;
-}
-
-button:hover, .btn:hover {
-    background-color: #45a049;
-}
-
-/* Dropdown menu styles */
 .dropdown {
-    display: inline-block;
     position: relative;
+    display: inline-block;
+    margin-right: 15px;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #fff;
+    background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
-    border-radius: 5px;
 }
 
 .dropdown-content a {
-    color: #333;
+    color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    text-align: left;
 }
 
 .dropdown-content a:hover {
     background-color: #f1f1f1;
 }
 
-/* Show the dropdown menu when hovered */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Logout button styles */
 .logout-btn {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: #f44336;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff4b5c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-.logout-btn:hover {
-    background-color: #e53935;
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h3 {
+    margin: 0;
+}
+
+p {
+    margin: 5px 0;
 }

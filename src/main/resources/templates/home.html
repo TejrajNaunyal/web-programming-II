@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Management</title>
+    <title>Learning Application</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <h1>Welcome to Student Management System</h1>
+    <h1>Welcome to Learning Application System</h1>
 
     <!-- Dropdown button for Add/List student actions -->
     <div class="actions">
@@ -16,6 +16,17 @@
             <div class="dropdown-content">
                 <a href="/students/add">Add Student</a>
                 <a href="/students">List Students</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dropdown button for Learning Path actions -->
+    <div class="actions">
+        <div class="dropdown">
+            <button class="btn">Learning Path Actions</button>
+            <div class="dropdown-content">
+                <a href="/learning-paths">View Learning Paths</a>
+                <a href="/learning-paths/add">Add Learning Path</a>
             </div>
         </div>
     </div>
